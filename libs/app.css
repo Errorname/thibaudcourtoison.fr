@@ -1,0 +1,14 @@
+
+.intro {
+    margin: 20px 0 20px 0;
+    padding: 40px 70px 40px 70px;
+}
+
+.intro .portrait {
+    padding-left: 140px;
+    padding-right: 150px;
+}
+
+.intro .portrait img {
+    box-shadow: 10px 10px 5px #aaa;
+}
