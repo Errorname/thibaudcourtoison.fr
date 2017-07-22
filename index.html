@@ -6,6 +6,9 @@
         <meta charset="utf-8">
 
         <link rel="stylesheet" type="text/css" href="/libs/bulma/bulma.css">
+        <link rel="stylesheet" type="text/css" href="/libs/spectre/spectre-exp.css">
+        <link rel="stylesheet" type="text/css" href="/libs/spectre/spectre-icons.css">
+        <link rel="stylesheet" type="text/css" href="/libs/hint/hint.css">
         <link rel="stylesheet" type="text/css" href="/libs/app.css">
     </head>
     <body>
@@ -35,8 +38,8 @@
                     <router-link :to="{ name: 'intro' }" tag="li" exact-active-class="is-active">
                         <a>Intro</a>
                     </router-link>
-                    <router-link :to="{ name: 'education' }" tag="li" active-class="is-active">
-                        <a>Education</a>
+                    <router-link :to="{ name: 'career' }" tag="li" active-class="is-active">
+                        <a>Career</a>
                     </router-link>
                     <router-link :to="{ name: 'projects' }" tag="li" active-class="is-active">
                         <a>Projects</a>
@@ -47,7 +50,7 @@
                 </ul>
             </div>
 
-            <router-view :projects="projects"></router-view>
+            <router-view :career="career" :education="education" :projects="projects"></router-view>
 
         </div>
 
@@ -61,8 +64,93 @@
             </div>
         </script>
 
-        <script type="text/x-template" id="education">
-            <h2>Education</h2>
+        <script type="text/x-template" id="career">
+            <div>
+                <div class="section" style="padding: 1rem 1.5rem">
+                    <h2 class="title is-2">Career</h2>
+
+                    <div class="columns">
+                        <div class="column">
+
+                        </div>
+                        <div class="column is-two-thirds">
+                            <div class="timeline">
+                                <div :class="'timeline-item '+(job.checked ? 'checked' : '')" v-for="job in career">
+                                    <div class="timeline-left">
+                                        <span class="hint--top" :aria-label="job.from+' - '+job.to">
+                                            <a class="timeline-icon" v-if="!job.checked"></a>
+                                            <a class="timeline-icon icon-lg" v-if="job.checked">
+                                                <i class="icon icon-check"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="columns is-gapless">
+                                            <div class="column">
+                                                <p class="content is-small has-text-centered" style="padding-top: 20px">
+                                                    <b>{{ job.to }}</b><br>
+                                                    <i class="icon icon-upward"></i><br>
+                                                    <b>{{ job.from }}</b>
+                                                </p>
+                                            </div>
+                                            <div class="column is-10">
+                                                <p class="title is-4">{{ job.title }}</p>
+                                                <p class="subtitle is-6">{{ job.subtitle }}</p>
+                                                <p>{{ job.text }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="section" style="padding: 1rem 1.5rem">
+                    <h2 class="title is-2">Education</h2>
+
+                    <div class="columns">
+                        <div class="column">
+
+                        </div>
+                        <div class="column is-two-thirds">
+                            <div class="timeline">
+                                <div :class="'timeline-item '+(school.checked ? 'checked' : '')" v-for="school in education">
+                                    <div class="timeline-left">
+                                        <span class="hint--top" :aria-label="school.from+' - '+school.to">
+                                            <a class="timeline-icon" v-if="!school.checked"></a>
+                                            <a class="timeline-icon icon-lg" v-if="school.checked">
+                                                <i class="icon icon-check"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="columns is-gapless">
+                                            <div class="column">
+                                                <p class="content is-small has-text-centered" style="padding-top: 20px">
+                                                    <b>{{ school.to }}</b><br>
+                                                    <i class="icon icon-upward"></i><br>
+                                                    <b>{{ school.from }}</b>
+                                                </p>
+                                            </div>
+                                            <div class="column is-10">
+                                                <p class="title is-4">{{ school.title }}</p>
+                                                <p class="subtitle is-6">{{ school.subtitle }}</p>
+                                                <p>{{ school.text }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </script>
 
         <script type="text/x-template" id="projects">

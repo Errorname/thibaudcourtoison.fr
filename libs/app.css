@@ -22,3 +22,30 @@
     transform: translate(0px, 2px);
     box-shadow: 2px 2px 5px #aaa;
 }
+
+.timeline .timeline-item {
+    margin-bottom: 1.4rem;
+}
+
+.timeline-item:not(.checked) .timeline-content{
+    margin-left: -7px;
+}
+
+.timeline-item.checked .timeline-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.2rem !important;
+    font-size: 1.2rem !important;
+    margin-left: 0.45rem;
+    margin-top: 0.9rem
+}
+
+.timeline-item.checked .timeline-icon .icon {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.timeline .timeline-content {
+    padding-left: 0 !important;
+    padding-top: 10px !important;
+}
