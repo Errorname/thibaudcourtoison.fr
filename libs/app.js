@@ -27,8 +27,9 @@ const router = new VueRouter({
 	el: '#app'
 });*/
 
-const app = new Vue({
+var app = new Vue({
 	data: {
+		menu: false,
 		projects: ['OER', 'QRManager'],
 		career: [
 			{
@@ -44,8 +45,8 @@ const app = new Vue({
 				title: "Software Architect",
 				subtitle: "@Neosmose",
 				text: "Réalisation de nombreux projets informatiques: site d'e-learning, gestion de données d'appareils connectés, intranet, site vitrine, etc.",
-				from: "July 2016",
-				to: "Dec 2017"
+				from: "2016",
+				to: "2017"
 			}
 		],
 		education: [
@@ -54,24 +55,24 @@ const app = new Vue({
 				title: "Master's degree in Software architecture",
 				subtitle: "@University of Nantes",
 				text: "Some text, blabla blabla bla",
-				from: "Sept 2016",
-				to: "June 2018"
+				from: "2016",
+				to: "2018"
 			},
 			{
 				checked: true,
 				title: "Bachelor's degree in Computer Games Development",
 				subtitle: "@University of the West of Scotland",
 				text: "Some text, blabla blabla bla",
-				from: "Sept 2015",
-				to: "June 2016"
+				from: "2015",
+				to: "2016"
 			},
 			{
 				checked: true,
 				title: "DUT in Computer Engineering",
 				subtitle: "@IUT of Nantes",
 				text: "Some text, blabla blabla bla",
-				from: "Sept 2013",
-				to: "June 2015"
+				from: "2013",
+				to: "2015"
 			},
 		]
 	},

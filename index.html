@@ -5,6 +5,8 @@
 
         <meta charset="utf-8">
 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <link rel="stylesheet" type="text/css" href="/libs/bulma/bulma.css">
         <link rel="stylesheet" type="text/css" href="/libs/spectre/spectre-exp.css">
         <link rel="stylesheet" type="text/css" href="/libs/spectre/spectre-icons.css">
@@ -18,7 +20,7 @@
         <div id="app" class="container">
 
             <div class="intro hero is-light">
-                <div class="columns level">
+                <div class="columns level is-mobile">
                     <div class="column level-item">
                         <h1 class="title has-text-centered"><b>Thibaud<br>Courtoison</b></h1>
                     </div>
@@ -33,21 +35,43 @@
                 </div>
             </div>
 
-            <div class="tabs is-boxed is-fullwidth is-medium">
-                <ul>
-                    <router-link :to="{ name: 'intro' }" tag="li" exact-active-class="is-active">
-                        <a>Intro</a>
+            <div class="menu">
+                <div class="tabs is-boxed is-fullwidth is-medium">
+                    <ul>
+                        <router-link :to="{ name: 'intro' }" tag="li" exact-active-class="is-active">
+                            <a>Intro</a>
+                        </router-link>
+                        <router-link :to="{ name: 'career' }" tag="li" active-class="is-active">
+                            <a>Career</a>
+                        </router-link>
+                        <router-link :to="{ name: 'projects' }" tag="li" active-class="is-active">
+                            <a>Projects</a>
+                        </router-link>
+                        <router-link :to="{ name: 'contact' }" tag="li" active-class="is-active">
+                            <a>Contact</a>
+                        </router-link>
+                    </ul>
+                </div>
+
+                <div class="navbar-burger" :class="{ 'is-active': menu }" @click="menu=!menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="navbar-menu" :class="{ 'is-active': menu }">
+                    <router-link :to="{ name: 'intro' }" class="navbar-item" exact-active-class="is-active" @click.native="menu=false">
+                        Intro
                     </router-link>
-                    <router-link :to="{ name: 'career' }" tag="li" active-class="is-active">
-                        <a>Career</a>
+                    <router-link :to="{ name: 'career' }" class="navbar-item" active-class="is-active" @click.native="menu=false">
+                        Career
                     </router-link>
-                    <router-link :to="{ name: 'projects' }" tag="li" active-class="is-active">
-                        <a>Projects</a>
+                    <router-link :to="{ name: 'projects' }" class="navbar-item" active-class="is-active" @click.native="menu=false">
+                        Projects
                     </router-link>
-                    <router-link :to="{ name: 'contact' }" tag="li" active-class="is-active">
-                        <a>Contact</a>
+                    <router-link :to="{ name: 'contact' }" class="navbar-item" active-class="is-active" @click.native="menu=false">
+                        Contact
                     </router-link>
-                </ul>
+                </div>
             </div>
 
             <router-view :career="career" :education="education" :projects="projects"></router-view>
@@ -57,8 +81,9 @@
         <!-- Templates -->
 
         <script type="text/x-template" id="intro">
-            <div>
-                <h2>This website is under construction. Come back soon!</h2>
+            <div class="part">
+                <h2 class="title is-2">Intro</h2>
+                <p>This website is under construction. Come back soon!</p>
                 <br><br>
                 <p>Meanwhile, go check my hobby website: <a href="http://errorna.me" target="_blank">errorna.me</a></p>
             </div>
@@ -66,7 +91,7 @@
 
         <script type="text/x-template" id="career">
             <div>
-                <div class="section" style="padding: 1rem 1.5rem">
+                <div class="part">
                     <h2 class="title is-2">Career</h2>
 
                     <div class="columns">
@@ -75,7 +100,7 @@
                         </div>
                         <div class="column is-two-thirds">
                             <div class="timeline">
-                                <div :class="'timeline-item '+(job.checked ? 'checked' : '')" v-for="job in career">
+                                <div class="timeline-item" :class="{ 'checked': job.checked }" v-for="job in career">
                                     <div class="timeline-left">
                                         <span class="hint--top" :aria-label="job.from+' - '+job.to">
                                             <a class="timeline-icon" v-if="!job.checked"></a>
@@ -108,7 +133,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="section" style="padding: 1rem 1.5rem">
+                <div class="part">
                     <h2 class="title is-2">Education</h2>
 
                     <div class="columns">
@@ -154,8 +179,8 @@
         </script>
 
         <script type="text/x-template" id="projects">
-            <div>
-                <h2>Projects</h2>
+            <div class="part">
+                <h2 class="title is-2">Projects</h2>
 
                 <ul>
                     <li v-for="project in projects">
@@ -169,11 +194,15 @@
         </script>
 
         <script type="text/x-template" id="project">
-            <h2>Project: {{ $route.params.project_slug }}</h2>
+            <div class="part">
+                <h2 class="title is-2">Project: {{ $route.params.project_slug }}</h2>
+            </div>
         </script>
 
         <script type="text/x-template" id="contact">
-            <h2>Contact</h2>
+            <div class="part">
+                <h2 class="title is-2">Contact</h2>
+            </div>
         </script>
 
         <!-- Scripts -->
