@@ -10,14 +10,19 @@
     </head>
     <body>
 
+        <!-- App -->
+
         <div id="app" class="container">
+
             <div class="intro hero is-light">
                 <div class="columns level">
                     <div class="column level-item">
                         <h1 class="title has-text-centered"><b>Thibaud<br>Courtoison</b></h1>
                     </div>
                     <div class="portrait column level-item">
-                        <img src="/img/portrait.jpg" alt="portrait">
+                        <router-link :to="{ name: 'intro' }">
+                            <img src="/img/portrait.jpg" alt="portrait">
+                        </router-link>
                     </div>
                     <div class="column level-item">
                         <p class="title has-text-centered"><b>Software<br>Architect</b></p>
@@ -45,6 +50,8 @@
             <router-view :projects="projects"></router-view>
 
         </div>
+
+        <!-- Templates -->
 
         <script type="text/x-template" id="intro">
             <div>
@@ -80,6 +87,8 @@
         <script type="text/x-template" id="contact">
             <h2>Contact</h2>
         </script>
+
+        <!-- Scripts -->
 
         <script src="/libs/vue/vue.js" defer></script>
         <script src="/libs/vue/vue-router.js" defer></script>

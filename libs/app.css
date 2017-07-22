@@ -11,4 +11,14 @@
 
 .intro .portrait img {
     box-shadow: 10px 10px 5px #aaa;
+    cursor: pointer;
+}
+
+.intro .portrait img:not(:active) {
+    transition: box-shadow 0.1s;
+}
+
+.intro .portrait img:active{
+    transform: translate(0px, 2px);
+    box-shadow: 2px 2px 5px #aaa;
 }
