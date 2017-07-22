@@ -14,7 +14,7 @@
             <div class="intro hero is-light">
                 <div class="columns level">
                     <div class="column level-item">
-                        <p class="title has-text-centered"><b>Thibaud<br>Courtoison</b></p>
+                        <h1 class="title has-text-centered"><b>Thibaud<br>Courtoison</b></h1>
                     </div>
                     <div class="portrait column level-item">
                         <img src="/img/portrait.jpg" alt="portrait">
@@ -27,17 +27,62 @@
 
             <div class="tabs is-boxed is-fullwidth is-medium">
                 <ul>
-                    <li class="is-active"><a>Intro</a></li>
-                    <li><a>Education</a></li>
-                    <li><a>Projects</a></li>
-                    <li><a>Contact</a></li>
+                    <router-link :to="{ name: 'intro' }" tag="li" exact-active-class="is-active">
+                        <a>Intro</a>
+                    </router-link>
+                    <router-link :to="{ name: 'education' }" tag="li" active-class="is-active">
+                        <a>Education</a>
+                    </router-link>
+                    <router-link :to="{ name: 'projects' }" tag="li" active-class="is-active">
+                        <a>Projects</a>
+                    </router-link>
+                    <router-link :to="{ name: 'contact' }" tag="li" active-class="is-active">
+                        <a>Contact</a>
+                    </router-link>
                 </ul>
             </div>
-            <h2>This website is under construction. Come back soon!</h2>
-            <br><br>
-            <p>Meanwhile, go check my hobby website: <a href="http://errorna.me" target="_blank">errorna.me</a></p>
+
+            <router-view :projects="projects"></router-view>
+
         </div>
 
+        <script type="text/x-template" id="intro">
+            <div>
+                <h2>This website is under construction. Come back soon!</h2>
+                <br><br>
+                <p>Meanwhile, go check my hobby website: <a href="http://errorna.me" target="_blank">errorna.me</a></p>
+            </div>
+        </script>
+
+        <script type="text/x-template" id="education">
+            <h2>Education</h2>
+        </script>
+
+        <script type="text/x-template" id="projects">
+            <div>
+                <h2>Projects</h2>
+
+                <ul>
+                    <li v-for="project in projects">
+                        <router-link :to="{ name: 'project', params: { project_slug: project } }">
+                            {{ project }}
+                        </router-link>
+                    </li>
+                </ul>
+
+            </div>
+        </script>
+
+        <script type="text/x-template" id="project">
+            <h2>Project: {{ $route.params.project_slug }}</h2>
+        </script>
+
+        <script type="text/x-template" id="contact">
+            <h2>Contact</h2>
+        </script>
+
+        <script src="/libs/vue/vue.js" defer></script>
+        <script src="/libs/vue/vue-router.js" defer></script>
         <script src="/libs/app.js" defer></script>
     </body>
 </html>
