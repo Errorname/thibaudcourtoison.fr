@@ -7,6 +7,9 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+		<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
         <link rel="stylesheet" type="text/css" href="/libs/bulma/bulma.css">
         <link rel="stylesheet" type="text/css" href="/libs/spectre/spectre-exp.css">
         <link rel="stylesheet" type="text/css" href="/libs/spectre/spectre-icons.css">
@@ -74,7 +77,9 @@
                 </div>
             </div>
 
-            <router-view :career="career" :education="education" :projects="projects"></router-view>
+			<div class="main">
+            	<router-view :career="career" :education="education" :projects="projects"></router-view>
+			</div>
 
         </div>
 
@@ -94,87 +99,118 @@
                 <div class="part">
                     <h2 class="title is-2">Career</h2>
 
-                    <div class="columns">
-                        <div class="column">
-
-                        </div>
-                        <div class="column is-two-thirds">
-                            <div class="timeline">
-                                <div class="timeline-item is-hidden-mobile" :class="{ 'checked': job.checked }" v-for="job in career">
-                                    <div class="timeline-left">
-                                        <span class="hint--top" :aria-label="job.from+' - '+job.to">
-                                            <a class="timeline-icon" v-if="!job.checked"></a>
-                                            <a class="timeline-icon icon-lg" v-if="job.checked">
-                                                <i class="icon icon-check"></i>
-                                            </a>
-                                        </span>
+                    <div class="timeline">
+                        <div class="timeline-item is-hidden-mobile" :class="{ 'checked': job.checked }" v-for="job in career">
+                            <div class="timeline-left">
+                                <span class="hint--top" :aria-label="job.from+' - '+job.to">
+                                    <a class="timeline-icon" v-if="!job.checked"></a>
+                                    <a class="timeline-icon icon-lg" v-if="job.checked">
+                                        <i class="icon icon-check"></i>
+                                    </a>
+                                </span>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="columns is-gapless">
+                                    <div class="column is-2">
+                                        <p class="content is-small has-text-centered range" style="padding-top: 20px">
+                                            <b>{{ job.to }}</b><br>
+                                            <i class="icon icon-upward"></i><br>
+                                            <b>{{ job.from }}</b>
+                                        </p>
                                     </div>
-                                    <div class="timeline-content">
-                                        <div class="columns is-gapless">
-                                            <div class="column">
-                                                <p class="content is-small has-text-centered" style="padding-top: 20px">
-                                                    <b>{{ job.to }}</b><br>
-                                                    <i class="icon icon-upward"></i><br>
-                                                    <b>{{ job.from }}</b>
-                                                </p>
-                                            </div>
-                                            <div class="column is-10">
-                                                <p class="title is-4">{{ job.title }}</p>
-                                                <p class="subtitle is-6">{{ job.subtitle }}</p>
-                                                <p>{{ job.text }}</p>
-                                            </div>
-                                        </div>
+                                    <div class="column is-7">
+                                        <p class="title is-4">{{ job.title }}</p>
+                                        <p class="subtitle is-6">{{ job.subtitle }}</p>
+                                        <p class="text-justify">{{ job.text }}</p>
                                     </div>
-                                </div>
-                                <div class="timeline-item is-hidden-tablet">
-                                    XX
+									<div class="column is-3" align="center">
+										<img :src="job.img" :alt="job.img_alt">
+									</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="column">
-
+                        <div class="timeline-item is-hidden-tablet" :class="{ 'checked': job.checked }" v-for="job in career">
+							<div class="timeline-left">
+                                <span class="hint--top" :aria-label="job.from+' - '+job.to">
+                                    <a class="timeline-icon" v-if="!job.checked"></a>
+                                    <a class="timeline-icon icon-lg" v-if="job.checked">
+                                        <i class="icon icon-check"></i>
+                                    </a>
+                                </span>
+                            </div>
+							<div class="timeline-content">
+                                <div>
+                                    <p class="content is-small has-text-centered range" style="padding-bottom: 10px">
+                                        <b>{{ job.from }}</b>
+                                        <i class="icon icon-forward"></i>
+                                        <b>{{ job.to }}</b>
+                                    </p>
+                                </div>
+                                <div>
+                                    <p class="title is-5 text-center">{{ job.title }}</p>
+                                    <p class="subtitle is-6 text-center">{{ job.subtitle }}</p>
+                                    <p class="text-justify">{{ job.text }}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="part">
                     <h2 class="title is-2">Education</h2>
 
-                    <div class="columns">
-                        <div class="column">
-
-                        </div>
-                        <div class="column is-two-thirds">
-                            <div class="timeline">
-                                <div :class="'timeline-item '+(school.checked ? 'checked' : '')" v-for="school in education">
-                                    <div class="timeline-left">
-                                        <span class="hint--top" :aria-label="school.from+' - '+school.to">
-                                            <a class="timeline-icon" v-if="!school.checked"></a>
-                                            <a class="timeline-icon icon-lg" v-if="school.checked">
-                                                <i class="icon icon-check"></i>
-                                            </a>
-                                        </span>
+                    <div class="timeline">
+                        <div class="timeline-item is-hidden-mobile" :class="{ 'checked': school.checked }" v-for="school in education">
+                            <div class="timeline-left">
+                                <span class="hint--top" :aria-label="school.from+' - '+school.to">
+                                    <a class="timeline-icon" v-if="!school.checked"></a>
+                                    <a class="timeline-icon icon-lg" v-if="school.checked">
+                                        <i class="icon icon-check"></i>
+                                    </a>
+                                </span>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="columns is-gapless">
+                                    <div class="column is-2">
+                                        <p class="content is-small has-text-centered range" style="padding-top: 20px">
+                                            <b>{{ school.to }}</b><br>
+                                            <i class="icon icon-upward"></i><br>
+                                            <b>{{ school.from }}</b>
+                                        </p>
                                     </div>
-                                    <div class="timeline-content">
-                                        <div class="columns is-gapless">
-                                            <div class="column">
-                                                <p class="content is-small has-text-centered" style="padding-top: 20px">
-                                                    <b>{{ school.to }}</b><br>
-                                                    <i class="icon icon-upward"></i><br>
-                                                    <b>{{ school.from }}</b>
-                                                </p>
-                                            </div>
-                                            <div class="column is-10">
-                                                <p class="title is-4">{{ school.title }}</p>
-                                                <p class="subtitle is-6">{{ school.subtitle }}</p>
-                                                <p>{{ school.text }}</p>
-                                            </div>
-                                        </div>
+                                    <div class="column is-7">
+                                        <p class="title is-4">{{ school.title }}</p>
+                                        <p class="subtitle is-6">{{ school.subtitle }}</p>
+                                        <p class="text-justify">{{ school.text }}</p>
                                     </div>
+									<div class="column is-3" align="center">
+										<img :src="school.img" :alt="school.img_alt" class="img-responsive">
+									</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="column">
-
+						<div class="timeline-item is-hidden-tablet" :class="{ 'checked': school.checked }" v-for="school in education">
+							<div class="timeline-left">
+                                <span class="hint--top" :aria-label="school.from+' - '+school.to">
+                                    <a class="timeline-icon" v-if="!school.checked"></a>
+                                    <a class="timeline-icon icon-lg" v-if="school.checked">
+                                        <i class="icon icon-check"></i>
+                                    </a>
+                                </span>
+                            </div>
+							<div class="timeline-content">
+                                <div>
+                                    <p class="content is-small has-text-centered range" style="padding-bottom: 10px">
+                                        <b>{{ school.from }}</b>
+                                        <i class="icon icon-forward"></i>
+                                        <b>{{ school.to }}</b>
+                                    </p>
+                                </div>
+                                <div>
+                                    <p class="title is-5 text-center">{{ school.title }}</p>
+                                    <p class="subtitle is-6 text-center">{{ school.subtitle }}</p>
+                                    <p class="text-justify">{{ school.text }}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

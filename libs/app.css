@@ -1,10 +1,10 @@
 
-
 /* HEADER */
 
 .header {
     margin: 20px 0 20px 0;
     padding: 40px 70px 40px 70px;
+	background: linear-gradient(60deg, rgba(195,195,195,.2) 5%, rgba(80, 80, 80, 0.2)) !important;
 }
 
 .header .portrait {
@@ -37,6 +37,12 @@
     display: none;
 }
 
+/* MAIN */
+
+.main {
+	margin-bottom: 2rem;
+}
+
 /* CONTENT */
 
 .part {
@@ -44,6 +50,11 @@
 }
 
 /* TIMELINE */
+
+.timeline {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
 
 .timeline .timeline-item {
     margin-bottom: 1.4rem;
@@ -67,9 +78,18 @@
     height: 0.5rem;
 }
 
+.timeline-item .range {
+	padding-top: 20px;
+	padding-bottom: 0px;
+}
+
 .timeline .timeline-content {
     padding-left: 0 !important;
     padding-top: 10px !important;
+}
+
+.timeline img {
+	max-height: 6rem;
 }
 
 
@@ -81,21 +101,21 @@
 
     /* INTRO */
 
-    .intro {
+    .header {
         margin: 0;
         padding-left: 10px;
         padding-right: 10px;
     }
 
-    .intro .title {
+    .header .title {
         font-size: 0.8rem;
     }
 
-    .intro .portrait {
+    .header .portrait {
         padding: 0 25px 0 30px;
     }
 
-    .intro .portrait img {
+    .header .portrait img {
         box-shadow: 5px 5px 2px #aaa;
     }
 
@@ -120,4 +140,23 @@
         padding: 0.5rem 1rem;
     }
 
+	/* TIMELINE */
+
+	.timeline-item .range {
+		padding-top: 0px;
+		padding-bottom: 10px;
+	}
+
+	.timeline-item.checked .range {
+		padding-top: 7px;
+	}
+
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-justify {
+	text-align: justify;
 }

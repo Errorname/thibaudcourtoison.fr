@@ -31,11 +31,13 @@ var app = new Vue({
 		career: [
 			{
 				checked: false,
-				title: "Internship",
+				title: "Internship Software Architect",
 				subtitle: "@Your company?",
 				text: "I'm looking for an internship as a Junior Software Architect",
 				from: "Jan 2018",
-				to: "June 2018"
+				to: "June 2018",
+				img: "/img/timeline/YourCompany.png",
+				img_alt: "Your Company?"
 			},
 			{
 				checked: true,
@@ -43,7 +45,9 @@ var app = new Vue({
 				subtitle: "@Neosmose",
 				text: "Réalisation de nombreux projets informatiques: site d'e-learning, gestion de données d'appareils connectés, intranet, site vitrine, etc.",
 				from: "2016",
-				to: "2017"
+				to: "2017",
+				img: "/img/timeline/Neosmose.png",
+				img_alt: "Neosmose"
 			}
 		],
 		education: [
@@ -53,7 +57,9 @@ var app = new Vue({
 				subtitle: "@University of Nantes",
 				text: "Some text, blabla blabla bla",
 				from: "2016",
-				to: "2018"
+				to: "2018",
+				img: "/img/timeline/UnivNantes.png",
+				img_alt: "Université de Nantes"
 			},
 			{
 				checked: true,
@@ -61,7 +67,9 @@ var app = new Vue({
 				subtitle: "@University of the West of Scotland",
 				text: "Some text, blabla blabla bla",
 				from: "2015",
-				to: "2016"
+				to: "2016",
+				img: "/img/timeline/UWS.png",
+				img_alt: "University of the West of Scotland"
 			},
 			{
 				checked: true,
@@ -69,7 +77,9 @@ var app = new Vue({
 				subtitle: "@IUT of Nantes",
 				text: "Some text, blabla blabla bla",
 				from: "2013",
-				to: "2015"
+				to: "2015",
+				img: "/img/timeline/IUT_Nantes.gif",
+				img_alt: "IUT de Nantes"
 			},
 		]
 	},
