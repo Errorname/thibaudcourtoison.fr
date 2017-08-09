@@ -23,11 +23,8 @@ const router = new VueRouter({
 	routes: routes
 });
 
-/*const app = new Vue({
-	el: '#app'
-});*/
-
 var app = new Vue({
+	el: '#app',
 	data: {
 		menu: false,
 		projects: ['OER', 'QRManager'],
@@ -77,4 +74,4 @@ var app = new Vue({
 		]
 	},
 	router: router
-}).$mount('#app');
+});

@@ -1,27 +1,27 @@
 
 
-/* INTRO */
+/* HEADER */
 
-.intro {
+.header {
     margin: 20px 0 20px 0;
     padding: 40px 70px 40px 70px;
 }
 
-.intro .portrait {
+.header .portrait {
     padding-left: 200px;
     padding-right: 210px;
 }
 
-.intro .portrait img {
+.header .portrait img {
     box-shadow: 10px 10px 5px #aaa;
     cursor: pointer;
 }
 
-.intro .portrait img:not(:active) {
+.header .portrait img:not(:active) {
     transition: box-shadow 0.1s;
 }
 
-.intro .portrait img:active {
+.header .portrait img:active {
     transform: translate(0px, 2px);
     box-shadow: 2px 2px 5px #aaa;
 }

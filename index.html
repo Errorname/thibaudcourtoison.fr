@@ -19,7 +19,7 @@
 
         <div id="app" class="container">
 
-            <div class="intro hero is-light">
+            <div class="header hero is-light">
                 <div class="columns level is-mobile">
                     <div class="column level-item">
                         <h1 class="title has-text-centered"><b>Thibaud<br>Courtoison</b></h1>
@@ -82,10 +82,10 @@
 
         <script type="text/x-template" id="intro">
             <div class="part">
-                <h2 class="title is-2">Intro</h2>
-                <p>This website is under construction. Come back soon!</p>
-                <br><br>
-                <p>Meanwhile, go check my hobby website: <a href="http://errorna.me" target="_blank">errorna.me</a></p>
+            	<h2 class="title is-2">Intro</h2>
+            	<p>This website is under construction. Come back soon!</p>
+            	<br><br>
+            	<p>Meanwhile, go check my hobby website: <a href="http://errorna.me" target="_blank">errorna.me</a></p>
             </div>
         </script>
 
@@ -100,7 +100,7 @@
                         </div>
                         <div class="column is-two-thirds">
                             <div class="timeline">
-                                <div class="timeline-item" :class="{ 'checked': job.checked }" v-for="job in career">
+                                <div class="timeline-item is-hidden-mobile" :class="{ 'checked': job.checked }" v-for="job in career">
                                     <div class="timeline-left">
                                         <span class="hint--top" :aria-label="job.from+' - '+job.to">
                                             <a class="timeline-icon" v-if="!job.checked"></a>
@@ -125,6 +125,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="timeline-item is-hidden-tablet">
+                                    XX
                                 </div>
                             </div>
                         </div>
@@ -207,8 +210,8 @@
 
         <!-- Scripts -->
 
-        <script src="/libs/vue/vue.js" defer></script>
-        <script src="/libs/vue/vue-router.js" defer></script>
-        <script src="/libs/app.js" defer></script>
+        <script type="text/javascript" src="/libs/vue/vue.js" defer></script>
+        <script type="text/javascript" src="/libs/vue/vue-router.js" defer></script>
+        <script type="text/javascript" src="/libs/app.js" defer></script>
     </body>
 </html>
