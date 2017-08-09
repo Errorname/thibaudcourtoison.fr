@@ -56,6 +56,10 @@
 	padding-right: 1rem;
 }
 
+.timeline .title {
+    font-weight: 400;
+}
+
 .timeline .timeline-item {
     margin-bottom: 1.4rem;
 }
