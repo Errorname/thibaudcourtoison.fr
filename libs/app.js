@@ -27,13 +27,14 @@ var app = new Vue({
 	el: '#app',
 	data: {
 		menu: false,
-		projects: ['OER', 'QRManager'],
+		projects: ['OER', 'QRManager', 'ThisWebsite', 'ErrOrnAmE'],
 		career: [
 			{
 				checked: false,
 				title: "Internship Software Architect",
 				subtitle: "@Your company?",
-				text: "I'm looking for an internship as a Junior Software Architect",
+				text: "I'm looking for an internship as a Junior Software Architect.<br>" +
+					"If you are interested in having me, don't hesitate to <a href='/#/contact'>contact me</a>.",
 				from: "Jan 2018",
 				to: "June 2018",
 				img: "/img/timeline/YourCompany.png"
@@ -42,7 +43,7 @@ var app = new Vue({
 				checked: true,
 				title: "Software Architect",
 				subtitle: "@Neosmose",
-				text: "Réalisation de nombreux projets informatiques: site d'e-learning, gestion de données d'appareils connectés, intranet, site vitrine, etc.",
+				text: "Development of numerous IT projects: e-learning website, data management of connected devices, intranet, showcase websites, etc.",
 				from: "2016",
 				to: "2017",
 				img: "/img/timeline/Neosmose.png"
@@ -51,7 +52,8 @@ var app = new Vue({
 				checked: true,
 				title: "Intership Web Development",
 				subtitle: "@Les Polypodes",
-				text: "Some text, blabla blabla bla",
+				text: "Development of an open-source cultural events management solution for non-profit associations.<br>" +
+					"Technologies used: PHP, Symfony, CalDAV, Vagrant",
 				from: "2015",
 				to: "2015",
 				img: "/img/timeline/Polypodes.png"
