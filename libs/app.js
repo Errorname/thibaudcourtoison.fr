@@ -1,7 +1,17 @@
 
 // Templates
 
-const Intro = { template: '#intro' };
+const Intro = {
+	template: '#intro',
+	mounted: function() {
+		$('.skillbar').each(function(){
+			$(this).find('.skillbar-bar').animate({
+				width:$(this).attr('data-percent')
+			},2000);
+		});
+	},
+	props: ['skills']
+};
 const Career = { template: '#career', props: ['career','education'] };
 const Projects = { template: '#projects', props: ['projects']};
 const Project = { template: '#project' };
@@ -27,7 +37,55 @@ var app = new Vue({
 	el: '#app',
 	data: {
 		menu: false,
-		projects: ['OER', 'QRManager', 'ThisWebsite', 'ErrOrnAmE'],
+		skills: [
+			{
+				name: "Languages",
+				primary: [
+					{
+						name: "HTML5",
+						value: 75,
+						colors: ['#E34C26','#F06529']
+					},
+					{
+						name: "CSS3",
+						value: 60,
+						colors: ['#2980b9','#3498db']
+					},
+					{
+						name: "PHP7",
+						value: 90,
+						colors: ['#46465e','#5a68a5']
+					},
+					{
+						name: "SQL",
+						value: 70,
+						colors: ['#27ae60','#2ecc71']
+					},
+				],
+				secondary: ['Java','C','C++','Go']
+			},
+			{
+				name: "Frameworks",
+				primary: [
+					{
+						name: "Laravel",
+						value: 90,
+						colors: ['#f4645f','#e67e22']
+					},
+					{
+						name: "Symfony",
+						value: 70,
+						colors: ['#333333','#525252']
+					},
+					{
+						name: "Vue.js",
+						value: 80,
+						colors: ['#35495e','#42b883']
+					}
+				],
+				secondary: ['React','Ember']
+			}
+		],
 		career: [
 			{
 				checked: false,
@@ -87,7 +145,8 @@ var app = new Vue({
 				to: "2015",
 				img: "/img/timeline/IUT_Nantes.gif"
 			},
-		]
+		],
+		projects: ['OER', 'QRManager', 'ThisWebsite', 'ErrOrnAmE']
 	},
 	router: router
 });

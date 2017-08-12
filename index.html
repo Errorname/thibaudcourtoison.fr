@@ -56,7 +56,7 @@
                     </ul>
                 </div>
 
-                <div class="navbar-burger" :class="{ 'is-active': menu }" @click="menu=!menu">
+                <div class="navbar-burger is-hidden-tablet-only" :class="{ 'is-active': menu }" @click="menu=!menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -78,7 +78,12 @@
             </div>
 
 			<div class="main">
-            	<router-view :career="career" :education="education" :projects="projects"></router-view>
+            	<router-view
+					:skills="skills"
+					:career="career"
+					:education="education"
+					:projects="projects">
+				</router-view>
 			</div>
 
         </div>
@@ -87,11 +92,34 @@
 
         <script type="text/x-template" id="intro">
             <div class="part">
-            	<h2 class="title is-2">Intro</h2>
-            	<p>This website is under construction. Come back soon!</p>
-            	<br><br>
-            	<p>Meanwhile, go check my hobby website: <a href="http://errorna.me" target="_blank">errorna.me</a></p>
-            </div>
+				<h2 class="title is-2">Intro</h2>
+				<div class="columns">
+					<div class="column">
+		            	<p>This website is under construction. Come back soon!</p>
+		            	<br><br>
+		            	<p>Meanwhile, go check my hobby website: <a href="http://errorna.me" target="_blank">errorna.me</a></p>
+					</div>
+					<div class="column is-5">
+						<div class="panel">
+							<p class="panel-heading">
+								Tech Skills
+							</p>
+							<div class="panel-block skills" v-for="category in skills">
+								<p class="title is-5 has-text-centered">{{ category.name }}</p>
+								<div class="skillbar clearfix" v-for="skill in category.primary" :data-percent="skill.value+'%'">
+									<div class="skillbar-title" :style="{background: skill.colors[0]}"><span>{{ skill.name }}</span></div>
+									<div class="skillbar-bar" :style="{background: skill.colors[1], width: '25%'}"></div>
+									<div class="skill-bar-percent">{{ skill.value }}%</div>
+								</div>
+								<p style="margin-bottom: 5px">Other {{ category.name.toLowerCase() }}:</p>
+								<div class="tags">
+									<span class="tag is-medium" v-for="skill in category.secondary">{{ skill }}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
         </script>
 
         <script type="text/x-template" id="career">
@@ -246,6 +274,7 @@
 
         <!-- Scripts -->
 
+		<script type="text/javascript" src="/libs/jquery/jquery.min.js" defer></script>
         <script type="text/javascript" src="/libs/vue/vue.js" defer></script>
         <script type="text/javascript" src="/libs/vue/vue-router.js" defer></script>
         <script type="text/javascript" src="/libs/app.js" defer></script>
