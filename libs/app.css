@@ -3,13 +3,17 @@
 
 .header {
     margin: 20px 0 20px 0;
-    padding: 40px 70px 40px 70px;
+    padding: 40px 70px;
 	background: linear-gradient(60deg, rgba(195,195,195,.2) 5%, rgba(80, 80, 80, 0.2)) !important;
 }
 
 .header .portrait {
-    padding-left: 200px;
-    padding-right: 210px;
+	margin-left: 10px;
+	text-align: center;
+}
+
+.header .portrait img {
+	max-height: 12rem;
 }
 
 .header .portrait img {
@@ -187,17 +191,16 @@
 
     .header {
         margin: 0;
-        padding-left: 10px;
-        padding-right: 10px;
+		padding: 20px 10px;
     }
 
     .header .title {
         font-size: 0.8rem;
     }
 
-    .header .portrait {
-        padding: 0 25px 0 30px;
-    }
+	.header .portrait {
+		margin-left: 5px;
+	}
 
     .header .portrait img {
         box-shadow: 5px 5px 2px #aaa;
