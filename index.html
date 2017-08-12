@@ -92,12 +92,55 @@
 
         <script type="text/x-template" id="intro">
             <div class="part">
-				<h2 class="title is-2">Intro</h2>
+				<h2 class="title is-2">About me</h2>
 				<div class="columns">
 					<div class="column">
-		            	<p>This website is under construction. Come back soon!</p>
-		            	<br><br>
-		            	<p>Meanwhile, go check my hobby website: <a href="http://errorna.me" target="_blank">errorna.me</a></p>
+						<div class="card">
+							<div class="card-content">
+								<div class="content text-justify">
+									<p>
+										Hi, my name is <b>Thibaud Courtoison</b> and
+										I am a 22-year-old french developer currently finishing a Master in Software Architecture.
+									</p>
+									<br>
+									<p>
+										I started programming because I was bored, I continued out of passion.
+										After a 2 year DUT degree in Computer Engineering,
+										I went to the University of the West of Scotland to learn about Computer Games Development.<br>
+										Having enjoyed Scottish weather and graduated my Bachelor's degree,
+										I chose to come back in France to learn more about Software Architecture
+										in a Master's degree at the University of the Nantes.
+									</p>
+									<br>
+									<p>
+										Fast-learner, able to adapt and instinctive,
+										I like to learn every component of a system to be able to discover ways to improve and enhance it.<br>
+										With creativity, I find solutions to any issues and problems that present themselves.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="card" style="margin-top: 2rem">
+							<div class="is-flex">
+								<div style="flex-grow: 1">
+									<div class="card-content">
+										<div class="content">
+											<p class="title is-6">Hobby website</p>
+											<p>
+												In my spare time, I like to make video-game related projects.
+												<a href="https://errorna.me" target="_blank">Go check it out !</a>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="is-flex">
+									<a href="https://errorna.me" target="_blank">
+										<!-- TODO: Remove placeholder for real errorna.me image -->
+										<img src="/img/errorname.png" alt="errorna.me">
+									</a>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="column is-5">
 						<div class="panel">
@@ -106,7 +149,7 @@
 							</p>
 							<div class="panel-block skills" v-for="category in skills">
 								<p class="title is-5 has-text-centered">{{ category.name }}</p>
-								<div class="skillbar clearfix" v-for="skill in category.primary" :data-percent="skill.value+'%'">
+								<div class="skillbar" v-for="skill in category.primary" :data-percent="skill.value+'%'">
 									<div class="skillbar-title" :style="{background: skill.colors[0]}"><span>{{ skill.name }}</span></div>
 									<div class="skillbar-bar" :style="{background: skill.colors[1], width: '25%'}"></div>
 									<div class="skill-bar-percent">{{ skill.value }}%</div>
