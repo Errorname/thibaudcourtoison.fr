@@ -59,6 +59,18 @@
 	align-items: center;
 }
 
+.intro .errorname .gif::before {
+	visibility: hidden;
+	content: '';
+	border-left: 10px solid green;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+}
+
+.intro .errorname .gif:hover::before {
+	visibility: visible;
+}
+
 .intro .errorname .gif img {
 	max-height: 12rem;
 }
