@@ -15,7 +15,7 @@ const Intro = {
 const Career = { template: '#career', props: ['career','education'] };
 const Projects = { template: '#projects', props: ['projects']};
 const Project = { template: '#project' };
-const Contact = { template: '#contact' };
+const Contact = { template: '#contact', props: ['contact'] };
 
 // Routes
 
@@ -149,7 +149,24 @@ var app = new Vue({
 				img: "/img/timeline/IUT_Nantes.gif"
 			},
 		],
-		projects: ['OER', 'QRManager', 'ThisWebsite', 'ErrOrnAmE']
+		projects: ['OER', 'QRManager', 'ThisWebsite', 'ErrOrnAmE'],
+		contact: [
+			{
+				name: "email",
+				value: "thibaud.courtoison@gmail.com",
+				url: "mailto:thibaudcourtoison@gmail.com"
+			},
+			{
+				name: "github",
+				value: "@ErrOrnAmE",
+				url: "https://github.com/ErrOrnAmE"
+			},
+			{
+				name: "twitter",
+				value: "@ErrOrnAmE_",
+				url: "https://twitter.com/ErrOrnAmE_"
+			}
+		]
 	},
 	router: router
 });

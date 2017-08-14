@@ -93,7 +93,8 @@
 					:skills="skills"
 					:career="career"
 					:education="education"
-					:projects="projects">
+					:projects="projects"
+					:contact="contact">
 				</router-view>
 			</div>
 
@@ -321,8 +322,32 @@
         </script>
 
         <script type="text/x-template" id="contact">
-            <div class="part">
+            <div class="part contact">
                 <h2 class="title is-2">Contact</h2>
+				<div class="columns">
+					<div class="column is-8">
+						<div class="card">
+							<div class="card-content" align="center">
+								<p class="title is-5">Ways to contact me:</p>
+								<a v-for="item in contact" :class="'contact-item '+item.name" :href="item.url" target="_blank">
+									<div class="logo">
+										<img :src="'/img/contact/'+item.name+'.svg'" :alt="item.name">
+									</div>
+									<div class="value">
+										<p>{{ item.value }}</p>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="column is-4">
+						<div class="card">
+							<div class="card-content">
+								Twitter feed
+							</div>
+						</div>
+					</div>
+				</div>
             </div>
         </script>
 
