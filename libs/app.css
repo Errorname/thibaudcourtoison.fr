@@ -53,6 +53,16 @@
     padding: 1rem 1.5rem;
 }
 
+/* INTRO */
+
+.intro .errorname .gif {
+	align-items: center;
+}
+
+.intro .errorname .gif img {
+	max-height: 12rem;
+}
+
 /* TIMELINE */
 
 .timeline {
@@ -94,6 +104,12 @@
 .timeline .timeline-content {
     padding-left: 0 !important;
     padding-top: 10px !important;
+}
+
+.timeline .image-wrapper {
+	display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .timeline img {
