@@ -3,17 +3,23 @@
 
 const Intro = {
 	template: '#intro',
+	props: ['skills'],
 	mounted: function() {
 		$('.skillbar').each(function(){
 			$(this).find('.skillbar-bar').animate({
 				width:$(this).attr('data-percent')
 			},2000);
 		});
-	},
-	props: ['skills']
+	}
 };
 const Career = { template: '#career', props: ['career','education'] };
-const Projects = { template: '#projects', props: ['projects']};
+const Projects = {
+	template: '#projects',
+	props: ['projects'],
+	mounted: function() {
+		window.GitHubCalendar('.calendar','errorname');
+	}
+};
 const Project = { template: '#project' };
 const Contact = { template: '#contact', props: ['contact'] };
 
@@ -154,17 +160,26 @@ var app = new Vue({
 			{
 				name: "email",
 				value: "thibaud.courtoison@gmail.com",
-				url: "mailto:thibaudcourtoison@gmail.com"
+				url: "mailto:thibaudcourtoison@gmail.com",
+				color: "#D14836"
+			},
+			{
+				name: "linkedin",
+				value: "Thibaud Courtoison",
+				url: "https://www.linkedin.com/in/thibaud-courtoison/",
+				color: "#0077B5"
 			},
 			{
 				name: "github",
-				value: "@ErrOrnAmE",
-				url: "https://github.com/ErrOrnAmE"
+				value: "@Errorname",
+				url: "https://github.com/ErrOrnAmE",
+				color: "DarkSlateGray"
 			},
 			{
 				name: "twitter",
-				value: "@ErrOrnAmE_",
-				url: "https://twitter.com/ErrOrnAmE_"
+				value: "@Errorname_",
+				url: "https://twitter.com/ErrOrnAmE_",
+				color: "#1DA1F2"
 			}
 		]
 	},
