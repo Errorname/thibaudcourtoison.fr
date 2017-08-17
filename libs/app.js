@@ -12,7 +12,12 @@ const Intro = {
 		});
 	}
 };
-const Career = { template: '#career', props: ['career','education'] };
+
+const Career = {
+	template: '#career',
+	props: ['career','education']
+};
+
 const Projects = {
 	template: '#projects',
 	props: ['projects'],
@@ -20,8 +25,24 @@ const Projects = {
 		window.GitHubCalendar('.calendar','errorname');
 	}
 };
-const Project = { template: '#project' };
-const Contact = { template: '#contact', props: ['contact'] };
+
+const Project = {
+	template: '#project'
+};
+
+const Contact = {
+	template: '#contact',
+	props: ['contact'],
+	mounted: function() {
+		twttr.widgets.createTimeline({
+			sourceType: "profile",
+			screenName: "ErrOrnAmE_"
+		},document.getElementsByClassName("twitter-timeline")[0],{
+			height: 700,
+			dnt: false
+		});
+	}
+};
 
 // Routes
 
