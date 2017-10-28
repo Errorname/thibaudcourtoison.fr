@@ -208,6 +208,16 @@
 	color:rgba(0, 0, 0, 0.4);
 }
 
+/* PROJECTS */
+
+.projects .category {
+	margin-bottom: 2rem;
+}
+
+.calendar {
+	min-width: auto;
+}
+
 /* CONTACT */
 
 .contact .contact-item {

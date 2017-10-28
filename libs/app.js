@@ -22,7 +22,9 @@ const Projects = {
 	template: '#projects',
 	props: ['projects'],
 	mounted: function() {
-		window.GitHubCalendar('.calendar','errorname');
+		window.GitHubCalendar('.calendar','Errorname',{
+			responsive: true
+		});
 	}
 };
 
@@ -176,7 +178,83 @@ var app = new Vue({
 				img: "/img/timeline/IUT_Nantes.gif"
 			},
 		],
-		projects: ['OER', 'QRManager', 'ThisWebsite', 'ErrOrnAmE'],
+		projects: {
+			professionnal: {
+				title: 'Professionnal projects',
+				items: [
+					{
+						slug: 'autoprop',
+						name: 'AutoProp',
+						tags: 'Laravel, Vue',
+						description: 'Fleet management and distribution'
+					},
+					{
+						slug: 'tracetemp',
+						name: 'Tracetemp',
+						tags: 'Laravel, Vue',
+						description: 'IOT temperature data management'
+					},
+					{
+						slug: 'coruscant',
+						name: 'Coruscant',
+						tags: 'Laravel, Vue',
+						description: 'In-house professionnal training management'
+					}
+				]
+			},
+			small: {
+				title: 'Small projects',
+				items: [
+					{
+						slug: 'qrmanager',
+						name: 'QRManager',
+						tags: 'PHP, JS',
+						description: 'Minimal tool for QR codes creation and management'
+					},
+					{
+						slug: 'oer',
+						name: 'OER',
+						tags: 'PHP, JS',
+						description: 'Creates OVH Email Redirections from a CSV file'
+					},
+					{
+						slug: 'vin-decoder',
+						name: 'VIN Decoder',
+						tags: 'Laravel',
+						description: 'Laravel package to query a VIN Decoder API'
+					},
+					{
+						slug: 'jquery-oembed',
+						name: 'jQuery oEmbed',
+						tags: 'jQuery',
+						description: 'jQuery plugin to easily embed mainstream services'
+					},
+					/*{
+						slug: 'lynceus',
+						name: 'Lynceus',
+						tags: 'JS',
+						description: 'Simple website monitoring dashboard'
+					}*/
+				]
+			},
+			misc: {
+				title: 'Miscellaneous',
+				items: [
+					{
+						slug: 'this-website',
+						name: 'This website',
+						tags: 'Vue, Bulma',
+						description: 'Website to showcase my work and education'
+					},
+					{
+						slug: 'video-games-website',
+						name: 'Video games website',
+						tags: 'HTML5, JS, Phaser',
+						description: 'Website to showcase small video games projects'
+					}
+				]
+			}
+		},
 		contact: [
 			{
 				name: "email",

@@ -25,7 +25,7 @@
         <link rel="stylesheet" type="text/css" href="/libs/spectre/spectre-exp.css">
         <link rel="stylesheet" type="text/css" href="/libs/spectre/spectre-icons.css">
         <link rel="stylesheet" type="text/css" href="/libs/hint/hint.css">
-		<link rel="stylesheet" type="text/css" href="/libs/github-calendar/github-calendar.css">
+		<link rel="stylesheet" type="text/css" href="/libs/github-calendar/github-calendar-responsive.css">
         <link rel="stylesheet" type="text/css" href="/libs/app.css">
     </head>
     <body>
@@ -302,17 +302,34 @@
         </script>
 
         <script type="text/x-template" id="projects">
-            <div class="part">
+            <div class="part projects">
                 <h2 class="title is-2">Projects</h2>
 
-                <ul>
-                    <li v-for="project in projects">
-                        <router-link :to="{ name: 'project', params: { project_slug: project } }">
-                            {{ project }}
-                        </router-link>
-                    </li>
-                </ul>
+				<div class="category" v-for="cat in projects">
+					<h3 class="subtitle is-3">{{ cat.title }}</h3>
+					<div class="columns is-multiline is-mobile">
+						<div class="column is-one-quarter-desktop is-one-third-tablet is-full-mobile" v-for="item in cat.items">
+							<router-link :to="{ name: 'project', params: { project_slug: item.slug } }">
+								<div class="card">
+									<div class="card-image">
+										<figure class="image is-4by3">
+											<img :src="'/img/projects/'+item.slug+'.png'" :alt="item.name">
+										</figure>
+									</div>
+									<div class="card-content" style="padding: 1rem">
+										<div class="content">
+											<p class="subtitle is-5" style="margin-bottom: 0">{{ item.name }}</p>
+											<small><i>{{ item.tags }}</i></small>
+											<p>{{ item.description }}</p>
+										</div>
+									</div>
+								</div>
+							</router-link>
+						</div>
+					</div>
+				</div>
 
+				<h3 class="subtitle is-3" align="center">Github activity</h3>
 				<div class="calendar"></div>
 
             </div>
