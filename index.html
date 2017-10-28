@@ -309,7 +309,7 @@
 					<h3 class="subtitle is-3">{{ cat.title }}</h3>
 					<div class="columns is-multiline is-mobile">
 						<div class="column is-one-quarter-desktop is-one-third-tablet is-full-mobile" v-for="item in cat.items">
-							<router-link :to="{ name: 'project', params: { project_slug: item.slug } }">
+							<router-link :to="{ name: 'project', params: { slug: item.slug, item: item } }">
 								<div class="card">
 									<div class="card-image">
 										<figure class="image is-4by3">
@@ -337,7 +337,36 @@
 
         <script type="text/x-template" id="project">
             <div class="part">
-                <h2 class="title is-2">Project: {{ $route.params.project_slug }}</h2>
+				<router-link :to="{ name: 'projects' }" class="button is-primary is-outlined is-pulled-left" style="position: absolute; margin-top: 0.25rem">
+					<i class="icon icon-back"></i>
+					<span>Projects</span>
+				</router-link>
+				<div class="title is-2 has-text-centered" style="margin-bottom: 2.5rem">
+	                {{ project.name }}
+				</div>
+				<p class="subtitle is-5 has-text-centered">Tags: <i>{{ project.tags }}</i></p>
+				<div class="level">
+					<div class="level-item has-text-centered" v-if="project.demo">
+						<b style="margin-right: 0.4rem">Demo:</b>
+						<a target="_blank" :href="project.demo">{{ project.demo }}</a>
+					</div>
+					<div class="level-item has-text-centered" v-if="project.github">
+						<b style="margin-right: 0.4rem">Github:</b>
+						<a target="_blank" :href="project.github">{{ project.github }}</a>
+					</div>
+				</div>
+				<div class="columns is-multiline is-mobile">
+					<div class="column is-two-thirds-tablet is-full-mobile">
+					</div>
+					<div class="column is-one-third-tablet is-full-mobile">
+						<figure class="image is-4by3">
+							<img :src="'/img/projects/'+project.slug+'.png'" :alt="project.name">
+						</figure>
+						<p class="has-text-centered">
+							<small><i>Screenshot of {{ project.name }}</i></small>
+						</p>
+					</div>
+				</div>
             </div>
         </script>
 
@@ -362,7 +391,13 @@
 					</div>
 					<div class="column is-4">
 						<div class="card">
-							<div class="card-content twitter-timeline"></div>
+							<div class="card-content twitter-timeline">
+								<div class="sk-cube-grid loading">
+									<div class="sk-cube sk-cube1"></div><div class="sk-cube sk-cube2"></div><div class="sk-cube sk-cube3"></div>
+									<div class="sk-cube sk-cube4"></div><div class="sk-cube sk-cube5"></div><div class="sk-cube sk-cube6"></div>
+									<div class="sk-cube sk-cube7"></div><div class="sk-cube sk-cube8"></div><div class="sk-cube sk-cube9"></div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -376,6 +411,7 @@
         <script type="text/javascript" src="/libs/vue/vue-router.js" defer></script>
 		<script type="text/javascript" src="/libs/github-calendar/github-calendar.min.js" defer></script>
         <script type="text/javascript" src="//platform.twitter.com/widgets.js" defer charset="utf-8"></script>
+		<script type="text/javascript" src="/data.js" defer></script>
         <script type="text/javascript" src="/libs/app.js" defer></script>
     </body>
 </html>
