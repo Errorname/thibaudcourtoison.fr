@@ -120,7 +120,17 @@ var data = {
 					slug: 'autoprop',
 					name: 'AutoProp',
 					tags: 'Laravel, Vue',
-					description: 'Fleet management and distribution'
+					description: 'Fleet management and distribution',
+					text: [
+						{
+							title: 'Description',
+							text: 'Blablabl abla bka bal'
+						},
+						{
+							title: 'What I learned',
+							text: 'Ibfzeif zekf kezf zekjn zezef zekjfn zkef ,ze f,ner vrkzflnezknflz elen elnrlizfn lzen lezlrjnez,; lkez'
+						}
+					]
 				},
 				{
 					slug: 'tracetemp',
@@ -144,7 +154,19 @@ var data = {
 					name: 'QRManager',
 					tags: 'PHP, JS',
 					demo: 'https://errorna.me/tools/qr',
-					description: 'Minimal tool for QR codes creation and management'
+					description: 'Minimal tool for QR codes creation and management',
+					text: [
+						{
+							title: 'Description',
+							text: "This tool can be used to create and manage QR codes." +
+								"You simply need to put a php script in your web server, and everything works." +
+								"My goal for this project was to have the smallest size possible."
+						},
+						{
+							title: 'What I learned',
+							text: ""
+						}
+					]
 				},
 				{
 					slug: 'oer',

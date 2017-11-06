@@ -357,6 +357,10 @@
 				</div>
 				<div class="columns is-multiline is-mobile">
 					<div class="column is-two-thirds-tablet is-full-mobile">
+						<div v-for="part in project.text">
+							<p class="subtitle is-4" style="margin-bottom: 0.8rem">{{ part.title }}</p>
+							<div style="margin-bottom: 1rem; text-indent: 2rem; text-align: justify;">{{ part.text }}</div>
+						</div>
 					</div>
 					<div class="column is-one-third-tablet is-full-mobile">
 						<figure class="image is-4by3">
