@@ -336,7 +336,7 @@
         </script>
 
         <script type="text/x-template" id="project">
-            <div class="part">
+            <div class="part project">
 				<router-link :to="{ name: 'projects' }" class="button is-primary is-outlined is-pulled-left" style="position: absolute; margin-top: 0.25rem">
 					<i class="icon icon-back"></i>
 					<span>Projects</span>
@@ -352,7 +352,7 @@
 					</div>
 					<div class="level-item has-text-centered" v-if="project.github">
 						<b style="margin-right: 0.4rem">Github:</b>
-						<a target="_blank" :href="project.github">{{ project.github }}</a>
+						<a target="_blank" :href="project.github" style="overflow:hidden">{{ project.github }}</a>
 					</div>
 				</div>
 				<div class="columns is-multiline is-mobile">

@@ -335,7 +335,15 @@
 
 /*********************************/
 
+@media screen and (max-width: 600px) {
 
+	/* PROJECTS */
+
+	.project .title {
+		padding-top: 2.5rem;
+	}
+
+}
 
 @media screen and (max-width: 768px) {
 
