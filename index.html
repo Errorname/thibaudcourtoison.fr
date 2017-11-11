@@ -183,7 +183,7 @@
                 <div class="part">
                     <h2 class="title is-2">Career</h2>
 
-                    <div class="timeline">
+                    <div class="timeline career">
                         <div class="timeline-item is-hidden-mobile" :class="{ 'checked': job.checked }" v-for="job in career">
                             <div class="timeline-left">
                                 <span class="hint--top" :aria-label="job.from+' - '+job.to">
@@ -242,7 +242,7 @@
                 <div class="part">
                     <h2 class="title is-2">Education</h2>
 
-                    <div class="timeline">
+                    <div class="timeline education">
                         <div class="timeline-item is-hidden-mobile" :class="{ 'checked': school.checked }" v-for="school in education">
                             <div class="timeline-left">
                                 <span class="hint--top" :aria-label="school.from+' - '+school.to">
@@ -359,7 +359,7 @@
 					<div class="column is-two-thirds-tablet is-full-mobile">
 						<div v-for="part in project.text">
 							<p class="subtitle is-4" style="margin-bottom: 0.8rem">{{ part.title }}</p>
-							<div style="margin-bottom: 1rem; text-indent: 2rem; text-align: justify;">{{ part.text }}</div>
+							<div style="margin-bottom: 1rem; text-indent: 2rem; text-align: justify;" v-html="part.text"></div>
 						</div>
 					</div>
 					<div class="column is-one-third-tablet is-full-mobile">
