@@ -30,7 +30,10 @@ const Projects = {
 
 const Project = {
 	template: '#project',
-	props: ['project']
+	props: ['project'],
+	mounted: function() {
+		$('.screenshot a').simpleLightbox();
+	}
 };
 
 const Contact = {

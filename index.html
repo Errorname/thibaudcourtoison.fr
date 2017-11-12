@@ -26,6 +26,7 @@
         <link rel="stylesheet" type="text/css" href="/libs/spectre/spectre-icons.css">
         <link rel="stylesheet" type="text/css" href="/libs/hint/hint.css">
 		<link rel="stylesheet" type="text/css" href="/libs/github-calendar/github-calendar-responsive.css">
+		<link rel="stylesheet" type="text/css" href="/libs/simplelightbox/simplelightbox.min.css">
         <link rel="stylesheet" type="text/css" href="/libs/app.css">
     </head>
     <body>
@@ -362,13 +363,15 @@
 							<div style="margin-bottom: 1rem; text-indent: 2rem; text-align: justify;" v-html="part.text"></div>
 						</div>
 					</div>
-					<div class="column is-one-third-tablet is-full-mobile">
-						<figure class="image is-4by3">
-							<img :src="'/img/projects/'+project.slug+'.png'" :alt="project.name">
-						</figure>
-						<p class="has-text-centered">
-							<small><i>Screenshot of {{ project.name }}</i></small>
-						</p>
+					<div class="column is-one-third-tablet is-full-mobile screenshot">
+						<a :href="'/img/projects/'+project.slug+'.png'">
+							<figure class="image is-4by3">
+								<img :src="'/img/projects/'+project.slug+'.png'" :alt="project.name">
+							</figure>
+							<p class="has-text-centered has-text-dark">
+								<small><i>Screenshot of {{ project.name }}</i></small>
+							</p>
+						</a>
 					</div>
 				</div>
             </div>
@@ -411,6 +414,7 @@
         <!-- Scripts -->
 
 		<script type="text/javascript" src="/libs/jquery/jquery.min.js" defer></script>
+		<script type="text/javascript" src="/libs/simplelightbox/simplelightbox.min.js" defer></script>
         <script type="text/javascript" src="/libs/vue/vue.js" defer></script>
         <script type="text/javascript" src="/libs/vue/vue-router.js" defer></script>
 		<script type="text/javascript" src="/libs/github-calendar/github-calendar.min.js" defer></script>
