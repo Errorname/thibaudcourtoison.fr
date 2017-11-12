@@ -227,6 +227,7 @@ var data = {
 					slug: 'jquery-oembed',
 					name: 'jQuery oEmbed',
 					tags: 'jQuery',
+					demo: 'https://errorna.me/tools/jquery-oembed',
 					github: 'https://github.com/ErrOrnAmE/jquery-oembed-mainstream',
 					description: 'jQuery plugin to easily embed mainstream services',
 					text: [
