@@ -32,17 +32,17 @@ var data = {
 			primary: [
 				{
 					name: "Laravel",
-					value: 90,
+					value: 80,
 					colors: ['#f4645f','#e67e22']
 				},
 				{
 					name: "Vue.js",
-					value: 80,
+					value: 70,
 					colors: ['#35495e','#42b883']
 				},
 				{
 					name: "Symfony",
-					value: 70,
+					value: 65,
 					colors: ['#333333','#525252']
 				}
 			],
@@ -55,7 +55,7 @@ var data = {
 			title: "Internship Software Architect",
 			subtitle: "@Your company?",
 			text: "I am currently looking for an internship as a Junior Software Architect.<br>" +
-				"If you are interested in having me, don't hesitate to <a href='/#/contact'>contact me</a>.",
+				"If you are interested in having me, don't hesitate to <a href='/contact'>contact me</a>.",
 			from: "Jan 2018",
 			to: "June 2018",
 			img: "/img/timeline/YourCompany.png"
@@ -124,11 +124,14 @@ var data = {
 					text: [
 						{
 							title: 'Description',
-							text: "Car fleet management and distribution. We (Neosmose) developed this application for a company which collect and clean cars at the factory outlet. Then, they distribute them through the cars dealer's network."
+							text: "Car fleet management and distribution. We (Neosmose) developed this application for a company which collect and clean cars at the factory outlet. Then, they distribute them through the cars dealer's network. <br>" +
+								"Before using this application, the company managed their car fleet using Excel spreadsheets. This took time and manpower to maintain the files and interface with their client. " +
+								"In addition to automating theses tasks, they now have accurate reporting of their fleet and distribution, as well as their worker current tasks."
 						},
 						{
 							title: 'What I learned',
-							text: ""
+							text: "This application is a great example of how computer engineering can automate processes in order to reduce the needed time and manpower to complete tasks. " +
+								"I learned that understanding the problem is key in order to help the digitalization of businesses."
 						}
 					]
 				},
@@ -181,7 +184,8 @@ var data = {
 							title: 'Description',
 							text: "Minimal tool for QR codes creation and management. This tool can be used to create and manage QR codes." +
 								"You simply need to put a php script in your web server, and everything works." +
-								"My goal for this project was to have the smallest size possible."
+								"My goal for this project was to have the smallest size possible.<br>" +
+								"<b>Credentials:</b> demo / demo"
 						},
 						{
 							title: 'What I learned',
@@ -206,7 +210,7 @@ var data = {
 						}
 					]
 				},
-				{
+				/*{
 					slug: 'vin-decoder',
 					name: 'VIN Decoder',
 					tags: 'Laravel',
@@ -222,7 +226,7 @@ var data = {
 							text: ""
 						}
 					]
-				},
+				},*/
 				{
 					slug: 'jquery-oembed',
 					name: 'jQuery oEmbed',
@@ -247,7 +251,7 @@ var data = {
 					tags: 'JS, Vue, Bitcoin Cash',
 					demo: 'https://errorna.me/tools/cryptowatcher',
 					github: 'https://github.com/ErrOrnAmE/CryptoWatcher',
-					description: 'Cryptocurrency dashboard to have an eye on my investment',
+					description: 'Cryptocurrency dashboard to have an eye on my coins',
 					text: [
 						{
 							title: 'Description',
