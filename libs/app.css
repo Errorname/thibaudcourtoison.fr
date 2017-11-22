@@ -4,12 +4,31 @@
 .header {
     margin: 20px 0 20px 0;
     padding: 40px 70px;
-	background: linear-gradient(60deg, rgba(195,195,195,.2) 5%, rgba(80, 80, 80, 0.2)) !important;
+	position: relative;
+	overflow: hidden;
+	opacity: 1;
+	background-color: white;
+}
+
+.header:before {
+	content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.7;
+	background-image: url('/img/header.jpg');
+	background-size: cover;
+	background-position: 0 43%;
 }
 
 .header .portrait {
 	margin-left: 10px;
 	text-align: center;
+	z-index: 2;
 }
 
 .header .portrait img {
@@ -17,7 +36,7 @@
 }
 
 .header .portrait img {
-    box-shadow: 10px 10px 5px #aaa;
+    box-shadow: 10px 10px 5px #aaa4;
     cursor: pointer;
 }
 
@@ -27,7 +46,17 @@
 
 .header .portrait img:active {
     transform: translate(0px, 2px);
-    box-shadow: 2px 2px 5px #aaa;
+    box-shadow: 2px 2px 5px #aaa4;
+}
+
+.header .title {
+	color: black !important;
+}
+
+.header .column:not(.portrait) {
+	background-color: #fff7;
+    border-radius: 2px;
+	z-index: 2;
 }
 
 /* MENU */
@@ -43,6 +72,11 @@
 
 .navbar-menu {
     display: none;
+}
+
+.navbar-burger {
+	background-color: whitesmoke;
+	z-index: 2;
 }
 
 /* MAIN */
@@ -363,7 +397,7 @@
 	}
 
     .header .portrait img {
-        box-shadow: 5px 5px 2px #aaa;
+        box-shadow: 5px 5px 2px #aaa4;
     }
 
     /* MENU */

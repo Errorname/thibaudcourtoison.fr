@@ -6,12 +6,12 @@ var data = {
 			primary: [
 				{
 					name: "PHP7",
-					value: 90,
+					value: 85,
 					colors: ['#46465e','#5a68a5']
 				},
 				{
 					name: "JS",
-					value: 90,
+					value: 85,
 					colors: ['#f7df1e','#f7df1e']
 				},
 				{
@@ -120,13 +120,14 @@ var data = {
 					slug: 'autoprop',
 					name: 'AutoProp',
 					tags: 'Laravel, Vue',
+					sector: 'Automobile industry',
 					description: 'Fleet management and distribution',
 					text: [
 						{
 							title: 'Description',
 							text: "Car fleet management and distribution. We (Neosmose) developed this application for a company which collect and clean cars at the factory outlet. Then, they distribute them through the cars dealer's network. <br>" +
-								"Before using this application, the company managed their car fleet using Excel spreadsheets. This took time and manpower to maintain the files and interface with their client. " +
-								"In addition to automating theses tasks, they now have accurate reporting of their fleet and distribution, as well as their worker current tasks."
+								"Before using this application, the company managed their car fleet using Excel spreadsheets. This took time and manpower to maintain the files and interface with their clients. <br><br>" +
+								"<b>Gain for the company:</b> One employee working full-time on these tasks was reassigned to a new mission in the company. In addition to automating these tasks, they now have accurate reporting of their fleet and distribution, as well as their worker current tasks."
 						},
 						{
 							title: 'What I learned',
@@ -139,11 +140,13 @@ var data = {
 					slug: 'tracetemp',
 					name: 'Tracetemp',
 					tags: 'Laravel, Vue',
+					sector: 'Transportation industry',
 					description: 'IOT temperature data management',
 					text: [
 						{
 							title: 'Description',
-							text: "IOT temperature data management. We (Neosmose) developed this application for a company which rent devices that log temperature. These devices were developed primarily for long period of internet isolation: for the transport of medicines or food for example."
+							text: "IOT temperature data management. We (Neosmose) developed this application for a company which rent devices that log temperature. These devices were developed primarily for long period of internet isolation: for the transport of medicines or food for example. " +
+								"Our application was at the core of the company offer as their clients were heavily relying on it to deliver comprehensive and reliable graphs and analysis of the data."
 						},
 						{
 							title: 'What I learned',
@@ -156,15 +159,19 @@ var data = {
 					slug: 'coruscant',
 					name: 'Coruscant',
 					tags: 'Laravel, Vue',
+					sector: 'Training courses',
 					description: 'In-house professionnal training management',
 					text: [
 						{
 							title: 'Description',
-							text: "In-house professionnal training management. We (Neosmose) developed this application for a company which trains entrepreneurs how to embrace the digital revolution taking place all over their respective industries. This requires a lot of administrative work to be regulations-compliant with the current French laws on the subject."
+							text: "In-house professionnal training management. We (Neosmose) developed this application for a training organization which trains entrepreneurs how to embrace the digital revolution taking place all over their respective industries. " +
+								"This requires a lot of administrative work to be regulation-compliant with the current French laws on the subject. " +
+								"Automating the bridge between various client data and the administrative support allows the organization to gain precious time on tasks with no added values to dedicate themselves on their core: creating and selling training courses."
 						},
 						{
 							title: 'What I learned',
-							text: ""
+							text: "I learned that the implementation of simple technical automation allows businesses to gain productivity and precious time which they do not realize yet they could have. " +
+								"This shows the importance of the digitalization of businesses and the impact it can have on the economy."
 						}
 					]
 				}
@@ -182,14 +189,18 @@ var data = {
 					text: [
 						{
 							title: 'Description',
-							text: "Minimal tool for QR codes creation and management. This tool can be used to create and manage QR codes." +
-								"You simply need to put a php script in your web server, and everything works." +
-								"My goal for this project was to have the smallest size possible.<br>" +
+							text: "Minimal tool for QR codes creation and management. " +
+								"You simply need to put a php script in your web server, and everything works. <br>" +
+								"After login to the application, you can create a QR code with a name and a target. You can then download the QR code associated. " +
+								"One key functionality is that if you want to change the target (to use a more up-to-date page for example), it will still be the same QR code associated. " +
+								"Therefore, you are not required to change the QR code from your previous means of communication.<br><br>" +
 								"<b>Credentials:</b> demo / demo"
 						},
 						{
 							title: 'What I learned',
-							text: "For this project, I discovered some great css libraries that are really simple to use and gives awesome results quickly. I also learned how to developed a feature that allows a one-click upgrade of the software with a repository mechanism."
+							text: "For this project, I discovered some great css libraries that are really simple to use and gives awesome results quickly. " +
+								"I also learned how to developed a feature that allows a one-click upgrade of the software with a repository mechanism." +
+								"My goal for this project was to have the smallest size possible."
 						}
 					]
 				},
@@ -202,11 +213,13 @@ var data = {
 					text: [
 						{
 							title: 'Description',
-							text: "This tools allows users to create OVH Email Redirections using a CSV files. You just need to login to the OVH and choose which domain name you wish to use. Then, with a really simple system of variables, you will create any number of redirections you want in one click."
+							text: "This tools allows users to create OVH Email Redirections using a CSV files. You just need to login to the OVH and choose which domain name you wish to use." +
+								"Then, with a really simple system of variables, you will create any number of redirections you want in one click."
 						},
 						{
 							title: 'What I learned',
-							text: "This project was a great way to play with the <a href='https://ovh.com' target='_blank'>OVH</a> API. I also learned about CSV parsing and its subtleties. I also took a lot of pleasure challenging myself to develop this tool in under 4 hours."
+							text: "This project was a great way to play with the <a href='https://ovh.com' target='_blank'>OVH</a> API. " +
+							"I also learned about CSV parsing and its subtleties. I also took a lot of pleasure challenging myself to develop this tool in under 4 hours."
 						}
 					]
 				},
@@ -237,11 +250,13 @@ var data = {
 					text: [
 						{
 							title: 'Description',
-							text: "jQuery plugin to easily embed mainstream services (like Youtube, SoundClound or Flickr). During the development of another project in which users could input text, I wanted to allow users to also input videos, musics and photos using the <a href='https://oembed.com' target='_blank'>oEmbed</a> protocol."
+							text: "jQuery plugin to easily embed mainstream services (like Youtube, SoundClound or Flickr). " +
+							"During the development of another project in which users could input text, I wanted to allow users to also input videos, musics and photos using the <a href='https://oembed.com' target='_blank'>oEmbed</a> protocol."
 						},
 						{
 							title: 'What I learned',
-							text: "This project was my first open source project and I took extra time to write the documention to allow people to easily use my tool. Working on this project also made me a huge believer of universal formats and protocols as a way for the web community to improve altogether."
+							text: "This project was my first open source project and I took extra time to write the documention to allow people to easily use my tool. " +
+							"Working on this project also made me a huge believer of universal formats and protocols as a way for the web community to improve altogether."
 						}
 					]
 				},
@@ -255,7 +270,8 @@ var data = {
 					text: [
 						{
 							title: 'Description',
-							text: "After reading quite a lot about cryptocurrencies and bitcoin, I finally decided to invest a small amount into <a href='https://www.bitcoincash.org' target='_blank'>Bitcoin Cash</a>. However, I thought that the exchange app I was using was too complicated for the simple thing I wanted to know: How much money do I have?<br>" +
+							text: "After reading quite a lot about cryptocurrencies and bitcoin, I finally decided to invest a small amount into <a href='https://www.bitcoincash.org' target='_blank'>Bitcoin Cash</a>. " +
+								"However, I thought that the exchange app I was using was too complicated for the simple thing I wanted to know: How much money do I have?<br>" +
 								"So I quickly developed a crazy simple webapp that allows me to see how much I have."
 						},
 						{
@@ -310,6 +326,12 @@ var data = {
 		}
 	],
 	contact: [
+		{
+			name: "phone",
+			value: "+33 (0)6 77 06 00 28",
+			url: "tel:+3367706770028",
+			color: "#7DCEA0"
+		},
 		{
 			name: "email",
 			value: "thibaud.courtoison@gmail.com",

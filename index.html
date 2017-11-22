@@ -127,16 +127,16 @@
 									<br>
 									<p>
 										I started programming because I was bored, I continued out of passion.
-										After a 2 year DUT degree in Computer Engineering,
+										After a two year DUT degree in Computer Engineering,
 										I went to the University of the West of Scotland to learn about Computer Games Development.<br>
 										Having enjoyed Scottish weather and graduated my Bachelor's degree,
 										I chose to come back in France to learn more about Software Architecture
-										in a Master's degree at the University of the Nantes.
+										in a Master's degree at the University of Nantes.
 									</p>
 									<br>
 									<p>
 										Fast-learner, able to adapt and instinctive,
-										I like to learn every component of a system to be able to discover ways to improve and enhance it.<br>
+										I like to understand every component of a system in order to discover ways to improve and enhance it.<br>
 										With creativity, I find solutions to any issues and problems that present themselves.
 									</p>
 								</div>
@@ -364,7 +364,12 @@
 				<div class="title is-2 has-text-centered" style="margin-bottom: 2.5rem">
 	                {{ project.name }}
 				</div>
-				<p class="subtitle is-5 has-text-centered">Tags: <i>{{ project.tags }}</i></p>
+				<p class="subtitle is-5 has-text-centered">
+					Tags: <i>{{ project.tags }}</i>
+				</p>
+				<p class="subtitle is-6 has-text-centered" v-if="project.sector">
+					Business sector: <i>{{ project.sector }}</i>
+				</p>
 				<div class="level">
 					<div class="level-item has-text-centered" v-if="project.demo">
 						<b style="margin-right: 0.4rem">Demo:</b>
